@@ -10,7 +10,7 @@ public class HttpControllerTest {
 
     @GetMapping("/http/lombok")
     public String lombokTest(){
-        Member m = new Member(1,"ssar","1234","email");
+        Member m = Member.builder().username("pjh").password("1234").email("pjh@email.com").build();
         System.out.println(TAG+"getter:"+m.getId());
         m.setId(5000);
         System.out.println(TAG+"setter:"+m.getId());

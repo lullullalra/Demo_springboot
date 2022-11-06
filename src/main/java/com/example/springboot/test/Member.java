@@ -1,12 +1,12 @@
 package com.example.springboot.test;
 
 
-import lombok.AllArgsConstructor;
+
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 public class Member {
     private int id;
@@ -14,5 +14,11 @@ public class Member {
     private String password;
     private String email;
 
-
+    @Builder
+    public Member(int id, String username, String password, String email) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+    }
 }
